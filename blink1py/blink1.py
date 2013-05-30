@@ -1,5 +1,8 @@
 import blink1_raw as b1raw
 
+class Blink1NotFoundError(Exception):
+    pass
+
 def open_blink1(id=None, serial=None, path=None):
     if id is not None:
         blink1 = b1raw.open_by_id(id)
@@ -9,6 +12,9 @@ def open_blink1(id=None, serial=None, path=None):
         blink1 = b1raw.open_by_path(path)
     else:
         blink1 = b1raw.blink1_open()
+    if not blink1:
+        raise Blink1NotFoundError(
+            'blink(1) library could not find a blink(1) device')
     return Blink1(blink1)
 
 def close_blink1(blink1):
