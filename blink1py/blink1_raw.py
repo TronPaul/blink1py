@@ -1,7 +1,13 @@
 from ctypes import (c_int, CDLL, c_char_p, c_wchar_p, c_void_p,
         c_ushort, c_ubyte, byref)
 from ctypes.util import find_library
+class Blink1LibraryError(Exception):
+    pass
+
 libname = find_library("blink1")
+if not libname:
+    raise Blink1LibraryError('blink(1) library not found')
+
 libblink1 = CDLL(libname)
 
 blink1_open = libblink1.blink1_open
