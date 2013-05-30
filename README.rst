@@ -7,7 +7,7 @@ Blink(1) python library
 Prerequesites
 =============
 
-1. Make the blink1 library (see `blink1/commandline<https://github.com/todbot/blink1/tree/master/commandline>`_)
+1. Make the blink1 library (see `blink1/commandline <https://github.com/todbot/blink1/tree/master/commandline>`_)
 
 2. Rename the blink1 library to ``libblink1.so.0.0`` (or something that
 will resolve as blink1) and add it to your path (ie ldconfig)

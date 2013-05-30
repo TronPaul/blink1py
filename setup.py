@@ -7,7 +7,7 @@ setup(
     author='Mark McGuire',
     author_email='mark.b.mcg@gmail.com',
     packages=['blink1py'],
-    license='LICENSE.txt',
+    license='Apache2',
     description='blink(1) library wrapper',
     long_description=open('README.rst').read(),
 )
